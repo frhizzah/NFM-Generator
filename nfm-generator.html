@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>NFM Message Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="header">
+    <div class="title">NFM Message Generator</div>
+    <div class="logos">
+      <img src="images/mag.webp" alt="MAG Logo">
+      <img src="images/maskargo.png" alt="Maskargo Logo">
+    </div>
+  </div>
+ 
+  <div class="flight-container">
+  <div class="flight-details">
+    <div class="form-inline">
+      <label for="flightNumber">Flight Number</label>
+      <input id="flightNumber" placeholder="e.g. MH001" required>
+    </div>
+    
+    <div id="flightDetailsRow">
+      <div class="form-inline">
+        <label for="flightDate">Date</label>
+        <select id="flightDate"></select>
+      </div>
+      <div class="form-inline">
+        <label for="flightMonth">Month</label>
+        <select id="flightMonth">
+          <option>JAN</option>
+          <option>FEB</option>
+          <option>MAR</option>
+          <option>APR</option>
+          <option>MAY</option>
+          <option>JUN</option>
+          <option>JUL</option>
+          <option>AUG</option>
+          <option>SEP</option>
+          <option>OCT</option>
+          <option>NOV</option>
+          <option>DEC</option>
+        </select>
+      </div>
+      <div class="form-inline">
+        <label for="origin">Origin</label>
+        <input id="origin" value="KUL" required>
+      </div>
+      <div class="form-inline">
+        <label for="destination">Destination</label>
+        <input id="destination" value="LHR" required>
+      </div>
+    </div>
+  </div>
+  </div>  
+
+  <div id="uldTabs">
+    <ul id="tabList" class="tab-list"></ul>
+    <div id="uldContainer" class="tab-content"></div>
+  </div>
+
+  <div class="button-group">
+    <button onclick="addULD()">Add ULD</button>
+    <button onclick="generateNFM()">Generate NFM</button>
+    <button onclick="clearAll()">Clear</button>
+  </div>  
+
+  <h2>NFM Output</h2>
+  <pre id="nfmOutput"></pre>
+  <button onclick="copyNFM()">Copy NFM</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
